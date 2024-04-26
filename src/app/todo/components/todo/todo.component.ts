@@ -45,4 +45,8 @@ public onCompleteTask(index:number): void {
   
 }
 
+public onNewTask(task:Task): void {
+  this.tasks.push();
+}
+
 }

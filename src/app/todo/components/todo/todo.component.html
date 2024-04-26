@@ -1,6 +1,7 @@
 <h3>Aplicación Lista de tareas to-do</h3>
 <hr>
 <!-- Formulario para agregar tareas -->
+<todo-add-task  (onNewTask)="onNewTask($event)"></todo-add-task>
 <hr>
 <!-- Lista de tareas -->
 <todo-list [list]="tasks" (onComplete)="onCompleteTask($event)" 

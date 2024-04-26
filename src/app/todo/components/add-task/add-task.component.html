@@ -1,0 +1,21 @@
+<form (ngSubmit)="emitTask()">
+    <div class="input-group">
+        <input 
+            type="text" 
+            name="description" 
+            [(ngModel)]="task.description" 
+            #description="ngModel" 
+            class="form-control" 
+            [ngClass]="{ 'is-invalid': description.invalid && (description.dirty || description.touched) }"
+            [ngClass]="{ 'is-valid': description.valid }"
+            placeholder="Task to do"
+            required
+            minlength="3">
+        <button type="submit"  class="btn btn-primary">Add</button>
+    </div>
+    <div *ngIf="description.invalid && (description.dirty || description.touched)"  class="errors">
+        <span *ngIf="description.errors?.['required']" > The task is required</span>
+        <!-- agreagamos el "?" porque no es obligatorio, puede venir nulo-->
+        <span *ngIf="description.errors?.['minlength']" > The task must have 3 characters at least</span>
+    </div>
+</form>
