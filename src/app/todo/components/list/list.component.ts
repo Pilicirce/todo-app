@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,Output, EventEmitter } from '@angular/core';
 import { Task } from '../../interfaces/task.interface';
 
 @Component({
@@ -9,4 +9,19 @@ import { Task } from '../../interfaces/task.interface';
 export class ListComponent {
   @Input()
   public list: Array<Task> = [];
+
+  @Output()
+  public onDelete: EventEmitter<number> = new EventEmitter();
+
+  @Output()
+  public onComplete: EventEmitter<number> = new EventEmitter();
+
+  public delete(index: number): void {
+    this.onDelete.emit(index);
+    console.log(index); //esto es solo para comprobar que los indices se estan mandando bien
+  }
+
+  public complete(index: number):void {
+    this.onComplete.emit(index);
+  }
 }

@@ -3,5 +3,6 @@
 <!-- Formulario para agregar tareas -->
 <hr>
 <!-- Lista de tareas -->
-<todo-list [list]="tasks"></todo-list>
+<todo-list [list]="tasks" (onComplete)="onCompleteTask($event)" 
+    (onDelete)="onDeleteTask($event)" ></todo-list>
 

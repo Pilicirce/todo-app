@@ -30,8 +30,19 @@ export class TodoComponent {
       isCompleted: false,
     },
     {
-      description: 'Finalizar aplicaciónS',
+      description: 'Finalizar aplicación',
       isCompleted: false,
     },
   ];
+
+public onDeleteTask(index: number): void {
+  this.tasks.splice(index, 1);  //esto de "splice"  reemplaza o elimina un elemento de un array
+}
+
+public onCompleteTask(index:number): void {
+  this.tasks[index].isCompleted = !this.tasks[index].isCompleted; 
+  //esto es para que se ponga en true si es false y vice versa
+  
+}
+
 }

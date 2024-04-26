@@ -1,6 +1,13 @@
 <ul class="mt-2 mb-2 list-group"> 
-    <li *ngFor="let task of list" class="list-group-item">
-        <span [ngClass]="{'text-decoration-line-through': task.isCompleted}">{{ task.description }}</span>
+    <li *ngFor="let task of list; let i=index; " class="list-group-item d-flex justify-content-between">
+        <div>
+            <span [ngClass]="{'text-decoration-line-through': task.isCompleted}">{{ task.description }}</span>
+        </div>
+        <div>
+            <button (click)="complete(i)" class="btn btn-primary btn-sm me-2"> Completed</button>
+            <button (click)="delete(i)"  class="btn btn-danger btn-sm">Delete</button>
+        </div>
+        
     </li>
 </ul>
 
