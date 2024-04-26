@@ -1,0 +1,6 @@
+<ul class="mt-2 mb-2 list-group"> 
+    <li *ngFor="let task of list" class="list-group-item">
+        <span [ngClass]="{'text-decoration-line-through': task.isCompleted}">{{ task.description }}</span>
+    </li>
+</ul>
+
