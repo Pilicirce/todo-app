@@ -11,7 +11,9 @@
             placeholder="Task to do"
             required
             minlength="3">
-        <button type="submit"  class="btn btn-primary">Add</button>
+        <button type="submit"  
+            class="btn btn-primary" 
+            [disabled]="description.invalid">Add</button>
     </div>
     <div *ngIf="description.invalid && (description.dirty || description.touched)"  class="errors">
         <span *ngIf="description.errors?.['required']" > The task is required</span>
