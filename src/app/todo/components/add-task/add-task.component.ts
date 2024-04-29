@@ -16,8 +16,10 @@ export class AddTaskComponent {
   };
   
   emitTask(): void {
+    if(this.task.description.length === 0 ) return;
+    
     this.onNewTask.emit(this.task);
-    this.task = {
+    this.task = {  //aqui task se puede mantener sin id (porque ya dijimos que era opcional)
       description: '',
       isCompleted: false,
     };

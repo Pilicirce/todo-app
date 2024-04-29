@@ -19,15 +19,15 @@ export class TodoComponent {
   }
 
 
-public onDeleteTask(index: number): void {
+public onDeleteTask(id: string ): void {
   //this.tasks.splice(index, 1);  //esto de "splice"  reemplaza o elimina un elemento de un array
-  this.tasksService.deleteTask(index);
+  this.tasksService.deleteTask(id);
 }
 
-public onCompleteTask(index:number): void {
+public onCompleteTask(id: string): void {
   //this.tasks[index].isCompleted = !this.tasks[index].isCompleted; 
   //esto es para que se ponga en true si es false y vice versa
-  this.tasksService.completeTask(index);
+  this.tasksService.completeTask(id);
 }
 
 public onNewTask(task:Task): void {

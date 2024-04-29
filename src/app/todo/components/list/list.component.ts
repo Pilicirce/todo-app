@@ -11,17 +11,17 @@ export class ListComponent {
   public list: Array<Task> = [];
 
   @Output()
-  public onDelete: EventEmitter<number> = new EventEmitter();
+  public onDelete: EventEmitter<string> = new EventEmitter();
 
   @Output()
-  public onComplete: EventEmitter<number> = new EventEmitter();
+  public onComplete: EventEmitter<string> = new EventEmitter();
 
-  public delete(index: number): void {
-    this.onDelete.emit(index);
-    console.log(index); //esto es solo para comprobar que los indices se estan mandando bien
+  public delete(id?: string): void {
+    this.onDelete.emit(id);
+    //console.log(id); //esto es solo para comprobar que los indices se estan mandando bien
   }
 
-  public complete(index: number):void {
-    this.onComplete.emit(index);
+  public complete(id?: string):void {
+    this.onComplete.emit(id);
   }
 }

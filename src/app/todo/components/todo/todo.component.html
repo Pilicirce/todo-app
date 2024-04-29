@@ -4,6 +4,8 @@
 <todo-add-task  (onNewTask)="onNewTask($event)"></todo-add-task>
 <hr>
 <!-- Lista de tareas -->
-<todo-list [list]="tasks" (onComplete)="onCompleteTask($event)" 
+<todo-list 
+    [list]="tasks" 
+    (onComplete)="onCompleteTask($event)" 
     (onDelete)="onDeleteTask($event)" ></todo-list>
 
